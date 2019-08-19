@@ -3,6 +3,9 @@ package dctower.lifts.app;
 import static org.junit.Assert.*;
 import org.junit.Test;
 
+import java.util.ArrayList;
+import java.util.List;
+
 /**
  * Unit test for simple App.
  */
@@ -32,5 +35,16 @@ public class AppTest
 
         System.out.println("Number of employees: " + lift1.getStops().size());
         assertEquals(1, lift1.getStops().size());
-    }
+    } // END addStop()
+
+    @Test
+    public void createLifts() {
+        UserInterface ui = new UserInterface();
+        List<Lift> lifts = new ArrayList<>();
+        lifts = ui.createLifts();
+        for (int i = 0; i < 7; i++) {
+            System.out.println("Lift number: " + lifts.get(i).getId());
+        }
+        assertEquals(7,lifts.size());
+    } // END of createLifts()
 }

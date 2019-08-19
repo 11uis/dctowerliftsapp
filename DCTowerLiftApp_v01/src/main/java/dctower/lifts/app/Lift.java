@@ -7,6 +7,7 @@ import java.util.List;
 public class Lift {
 
     // Attributes
+    private Integer id;
     private LiftState state = LiftState.GROUNDFLOOR;
     private Integer currentFloor;
     private List<Integer> stops;
@@ -25,8 +26,10 @@ public class Lift {
     public void setCurrentFloor(Integer c){
         this.currentFloor = c;
     }
+    public void setId(Integer id) { this.id = id; }
 
     // Getters
+    public Integer getId() { return this.id; }
     public List<Integer> getStops(){
         return this.stops;
     }
