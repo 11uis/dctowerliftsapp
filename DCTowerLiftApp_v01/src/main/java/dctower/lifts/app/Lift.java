@@ -46,6 +46,7 @@ public class Lift {
         this.employeeList.add(employee);
         // Auxiliar Integer to count how many times the floor is in the array
         Integer counter = 0;
+        // If employeeList was empty, now should be of Size 1
         if (this.employeeList.size() > 1){
             // Check if the floor is in the List of stops
             for (int i = 0; i < employeeList.size(); i++ ) {
@@ -53,10 +54,15 @@ public class Lift {
                     counter++;
                 }
             }
-            if (counter == 0) {
+            // the counter must be 1, to match the floor of the newcome Employee
+            // a bigger number means the floor is already in the list
+            if (counter == 1) {
                 // the Floor appeared for the first time, add it to the List
                 this.stops.add(employee.floor);
             }
         }
-    }
+        else {
+            this.stops.add(employee.floor);
+        }
+    } // END of addEmployee(...)
 }
