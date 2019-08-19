@@ -1,5 +1,5 @@
 package dctower.lifts.app;
 
 public enum LiftState {
-    UP, DOWN;
+    UP, STOP, DOWN, GROUNDFLOOR;
 }
