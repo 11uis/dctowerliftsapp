@@ -2,6 +2,7 @@ package dctower.lifts.app;
 
 import java.util.ArrayList;
 import java.util.List;
+import java.util.Scanner;
 
 public class Controller {
     private List<Lift> lifts;
@@ -12,7 +13,7 @@ public class Controller {
     /**
      * Private Constructor. -> Singleton-Pattern
      */
-    private Controller()
+    Controller()
     {
         // I need to initialize the lists
         this.lifts = new ArrayList<>();
@@ -50,6 +51,12 @@ public class Controller {
      * The main logic of the app
      */
 
-
+    /**
+     * Method to create an Employee
+     */
+    public void createEmployee( String name, Integer floor){
+        Employee newEmployee = new Employee(name, floor);
+        this.employees.add(newEmployee);
+    } // END of hireEmployee()
 
 }

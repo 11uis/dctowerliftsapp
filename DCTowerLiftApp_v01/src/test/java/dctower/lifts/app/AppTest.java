@@ -11,14 +11,7 @@ import java.util.List;
  */
 public class AppTest 
 {
-    /**
-     * Rigorous Test :-)
-     */
-    @Test
-    public void shouldAnswerWithTrue()
-    {
-        assertTrue( true );
-    }
+  private UserInterface ui = new UserInterface();
 
     /**
      * Testing the addStop() method from the Lift class
@@ -39,7 +32,7 @@ public class AppTest
 
     @Test
     public void createLifts() {
-        UserInterface ui = new UserInterface();
+        //UserInterface ui = new UserInterface();
         List<Lift> lifts = new ArrayList<>();
         lifts = ui.createLifts();
         for (int i = 0; i < 7; i++) {
@@ -50,13 +43,31 @@ public class AppTest
 
     @Test
     public void startUI() {
-        this.createLifts();
-        UserInterface ui = new UserInterface();
+        // this.createLifts();
         ui.start();
+
     } // END of startUI()
 
+    @Test
+    public void createEmployees() {
+        ui.createEmployees();
+    }
+
+    @Test
+    public void createFloors() {
+        ui.createFloors();
+        assertEquals(50, ui.controller.getInstance().getFloors().size());
+    }
+
+    // TODO Test not successful, retake
+    @Test
+    public void hireEmployee() {
+        ui.hireEmployee();
+
+    } // END of hireEmployee()
+
     /* @Test
-    public void ascendentStopsOrder() {
+    public void ascendingStopsOrder() {
         List<Employee> employeeList = new ArrayList<>();
         String name;
         for (int i = 6; i > 0; i--) {

@@ -72,7 +72,7 @@ public class Lift {
     /**
      * Method to order the Stops of the Lift in ascending order
      **/
-   /* public List<Integer> ascendentStopsOrder(){
+   /* public List<Integer> ascendingStopsOrder(){
         Integer temp;
         for (int i = 0; i < this.stops.size(); i++) {
             for (int j = i + 1; j < this.stops.size(); j++){
@@ -89,7 +89,7 @@ public class Lift {
     /**
      * Method to order the Stops of the Lift in descending order
      **/
-   /* public List<Integer> descendentStopsOrder(){
+   /* public List<Integer> descendingStopsOrder(){
         Integer temp ;
         for (int i = 0; i < this.stops.size(); i++) {
             for (int j = i + 1; j < this.stops.size(); j++){
