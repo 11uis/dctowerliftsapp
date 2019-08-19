@@ -68,4 +68,39 @@ public class Lift {
             this.stops.add(employee.floor);
         }
     } // END of addEmployee(...)
+
+    /**
+     * Method to order the Stops of the Lift in ascending order
+     **/
+   /* public List<Integer> ascendentStopsOrder(){
+        Integer temp;
+        for (int i = 0; i < this.stops.size(); i++) {
+            for (int j = i + 1; j < this.stops.size(); j++){
+                if (this.stops.get(i) > this.stops.get(j)) {
+                    temp = this.stops.get(i);
+                    this.stops.get(i) = this.stops.get(j);
+                    this.stops.get(j) = temp;
+                }
+            }
+        }
+        return this.stops;
+    } // END of ascendentStopsOrder(...)*/
+
+    /**
+     * Method to order the Stops of the Lift in descending order
+     **/
+   /* public List<Integer> descendentStopsOrder(){
+        Integer temp ;
+        for (int i = 0; i < this.stops.size(); i++) {
+            for (int j = i + 1; j < this.stops.size(); j++){
+                if (this.stops.get(i) < this.stops.get(j)) {
+                    temp = this.stops.get(i);
+                    this.stops.get(i) = this.stops.get(j);
+                    this.stops.get(j) = temp;
+                }
+            }
+        }
+        return this.stops;
+    } // END of descendentStopsOrder(...)*/
+
 }

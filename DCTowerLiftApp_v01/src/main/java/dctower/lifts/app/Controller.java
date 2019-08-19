@@ -21,6 +21,20 @@ public class Controller {
     }
 
     /**
+     * Setters
+     */
+    public void setLifts (List<Lift> lifts) { this.lifts = lifts; }
+    public void setEmployees (List<Employee> employees) { this.employees = employees; }
+    public void setFloors (List<Integer> floors) { this.floors = floors; }
+
+    /**
+     * Getters
+     */
+    public List<Lift> getLifts() { return this.lifts; }
+    public List<Employee> getEmployees() { return this.employees; }
+    public List<Integer> getFloors() { return this.floors; }
+
+    /**
      * Singleton-Pattern: the Controller class will be instantiated only once
      @return Controller
      */
