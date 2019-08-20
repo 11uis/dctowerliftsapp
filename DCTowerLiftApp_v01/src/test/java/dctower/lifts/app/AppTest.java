@@ -71,17 +71,11 @@ public class AppTest
         ui.addRequest(ui.controller.getInstance().getEmployees().get(0));
         ui.checkAvailableElevator();
 
-        // Print the Elevators State after the addRequest() method
-        System.out.println("\n\n################ Elevators after the addRequest ##############");
-        for ( int i = 0; i < ui.controller.getInstance().getLifts().size(); i ++) {
-            System.out.println("Lift: " + ui.controller.getInstance().getLifts().get(i).getId() +
-                    "    Current floor: " + ui.controller.getInstance().getLifts().get(i).getCurrentFloor() +
-                    "    State: " + ui.controller.getInstance().getLifts().get(i).getState());
-        }
+        // Print the Elevators State
+        ui.controller.getInstance().printElevatorsState();
 
         // Update the Elevators
         ui.controller.getInstance().goingUpElevator();
-
 
         ui.addRequest(ui.controller.getInstance().getEmployees().get(2));
         ui.checkAvailableElevator();
@@ -106,15 +100,8 @@ public class AppTest
         ui.addRequest(ui.controller.getInstance().getEmployees().get(8));
         ui.checkAvailableElevator();
         ui.controller.getInstance().goingDownElevator();
-
         // Print the Elevators State
-        System.out.println("\n\n################ Elevators State ##############");
-        for ( int i = 0; i < ui.controller.getInstance().getLifts().size(); i ++) {
-            System.out.println("Lift: " + ui.controller.getInstance().getLifts().get(i).getId() +
-                    "    Current floor: " + ui.controller.getInstance().getLifts().get(i).getCurrentFloor() +
-                    "    State: " + ui.controller.getInstance().getLifts().get(i).getState());
-        }
-
+        ui.controller.getInstance().printElevatorsState();
     } // END of availableElevator()
 
 

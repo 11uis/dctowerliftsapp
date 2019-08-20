@@ -88,4 +88,17 @@ public class Controller {
         }
     } // END of goingDownElevator()
 
+    /**
+     * Print Elevators state
+     */
+    public void printElevatorsState(){
+        // Print the Elevators State
+        System.out.println("\n\n################ Elevators State ##############");
+        for ( int i = 0; i < this.lifts.size(); i ++) {
+            System.out.println("Lift: " + this.lifts.get(i).getId() +
+                    "    Current floor: " + this.lifts.get(i).getCurrentFloor() +
+                    "    State: " + this.lifts.get(i).getState());
+        }
+    } // END of printElevatorsState()
+
 }
