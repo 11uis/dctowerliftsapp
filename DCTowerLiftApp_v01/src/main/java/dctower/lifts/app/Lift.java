@@ -53,19 +53,19 @@ public class Lift {
         if (this.employeeList.size() > 1){
             // Check if the floor is in the List of stops
             for (int i = 0; i < employeeList.size(); i++ ) {
-                if (employee.floor == this.employeeList.get(i).floor) {
+                if (employee.getFloor() == this.employeeList.get(i).getFloor()) {
                     counter++;
                 }
             }
-            // the counter must be 1, to match the floor of the newcome Employee
+            // the counter must be 1, to match the floor of the new come Employee
             // a bigger number means the floor is already in the list
             if (counter == 1) {
                 // the Floor appeared for the first time, add it to the List
-                this.stops.add(employee.floor);
+                this.stops.add(employee.getFloor());
             }
         }
         else {
-            this.stops.add(employee.floor);
+            this.stops.add(employee.getFloor());
         }
     } // END of addEmployee(...)
 

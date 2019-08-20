@@ -60,7 +60,7 @@ public class UserInterface {
     public void createEmployees(){
         String name;
         Integer floor;
-        for (int i = 0; i < 10; i++) {
+        for (int i = 1; i < 10; i++) {
             if (i%2 == 0) {
                 name = "employee" + i;
                 floor = i;
@@ -118,8 +118,11 @@ public class UserInterface {
                     this.controller.getInstance().getLifts().get(i).setState(LiftState.UP);
                     availableLift = this.controller.getInstance().getLifts().get(i);
                     break;
-                    // TODO: slice the employees that took the elevator from the requestUp
                 }
+            }
+            // Remove the employees that took the elevator from the requestUp
+            for (int k = this.requestUp.size() - 1; k >= 0; k--) {
+                this.requestUp.remove(k);
             }
         }  else if (this.requestDown.size() != 0){
             // TODO write method to pick the nearest Elevator
@@ -133,11 +136,13 @@ public class UserInterface {
                             this.controller.getInstance().getLifts().get(i).setState(LiftState.DOWN);
                             availableLift = this.controller.getInstance().getLifts().get(i);
                             break;
-
-                            // TODO: slice the employees that took the elevator from the requestDown
                         }
                     }
                 }
+            }
+            // Remove the employees that took the elevator from the requestDown
+            for(int k = this.requestDown.size() - 1; k >= 0; k--) {
+                this.requestDown.remove(k);
             }
         }
 

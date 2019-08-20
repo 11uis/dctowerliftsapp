@@ -59,4 +59,32 @@ public class Controller {
         this.employees.add(newEmployee);
     } // END of hireEmployee()
 
+    /**
+     * Elevator goes UP
+     * Methode done just for one stop and one employee
+     */
+    public void goingUpElevator(){
+        for (int i = 0; i < this.lifts.size(); i++) {
+            if ( lifts.get(i).getState() == LiftState.UP) {
+                // I assume I have 1 element
+                lifts.get(i).setCurrentFloor(lifts.get(i).getStops().get(0));
+                lifts.get(i).setState(LiftState.STOP);
+            }
+        }
+    } // END of goingUpElevator()
+
+    /**
+     * Elevator goes DOWN
+     * Methode done just for one stop and one employee
+     */
+    public void goingDownElevator(){
+        for (int i = 0; i < this.lifts.size(); i++) {
+            if ( lifts.get(i).getState() == LiftState.DOWN) {
+                // I assume I have 1 element
+                lifts.get(i).setCurrentFloor(0);
+                lifts.get(i).setState(LiftState.GROUNDFLOOR);
+            }
+        }
+    } // END of goingDownElevator()
+
 }
