@@ -61,6 +61,7 @@ public class AppTest
 
     /**
      * Test the addRequest() method and the checkAvailableElevator() method
+     * Also tests goingUpElevator() and goingDownElevator() methods
      */
     @Test
     public void availableElevator() {
@@ -81,23 +82,32 @@ public class AppTest
         ui.controller.getInstance().goingUpElevator();
 
 
-        ui.addRequest(ui.controller.getInstance().getEmployees().get(8));
+        ui.addRequest(ui.controller.getInstance().getEmployees().get(2));
         ui.checkAvailableElevator();
         ui.controller.getInstance().goingUpElevator();
 
-        // Print the Elevators State after the goingUpElevator() method
-        System.out.println("\n\n################ Elevators after going UP ##############");
-        for ( int i = 0; i < ui.controller.getInstance().getLifts().size(); i ++) {
-            System.out.println("Lift: " + ui.controller.getInstance().getLifts().get(i).getId() +
-                    "    Current floor: " + ui.controller.getInstance().getLifts().get(i).getCurrentFloor() +
-                    "    State: " + ui.controller.getInstance().getLifts().get(i).getState());
-        }
+        ui.addRequest(ui.controller.getInstance().getEmployees().get(7));
+        ui.checkAvailableElevator();
+        ui.controller.getInstance().goingUpElevator();
 
-        ui.addRequest(ui.controller.getInstance().getEmployees().get(0));
+        ui.addRequest(ui.controller.getInstance().getEmployees().get(6));
+        ui.checkAvailableElevator();
+        ui.controller.getInstance().goingUpElevator();
+
+        ui.addRequest(ui.controller.getInstance().getEmployees().get(5));
+        ui.checkAvailableElevator();
+        ui.controller.getInstance().goingUpElevator();
+
+        ui.addRequest(ui.controller.getInstance().getEmployees().get(4));
+        ui.checkAvailableElevator();
+        ui.controller.getInstance().goingUpElevator();
+
+        ui.addRequest(ui.controller.getInstance().getEmployees().get(8));
         ui.checkAvailableElevator();
         ui.controller.getInstance().goingDownElevator();
-        // Print the Elevators State after the goingDownElevator() method
-        System.out.println("\n\n################ Elevators after going DOWN ##############");
+
+        // Print the Elevators State
+        System.out.println("\n\n################ Elevators State ##############");
         for ( int i = 0; i < ui.controller.getInstance().getLifts().size(); i ++) {
             System.out.println("Lift: " + ui.controller.getInstance().getLifts().get(i).getId() +
                     "    Current floor: " + ui.controller.getInstance().getLifts().get(i).getCurrentFloor() +
