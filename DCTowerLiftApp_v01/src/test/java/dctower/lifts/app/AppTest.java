@@ -8,6 +8,7 @@ import java.util.List;
 
 /**
  * Unit test for simple App.
+ @author Lluis Carrasco Martinez
  */
 public class AppTest 
 {
