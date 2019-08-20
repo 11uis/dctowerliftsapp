@@ -1,5 +1,9 @@
 package dctower.lifts.app;
 
+/**
+ @author Lluis Carrasco Martinez
+ */
+
 public class Employee {
 
     // Attributes

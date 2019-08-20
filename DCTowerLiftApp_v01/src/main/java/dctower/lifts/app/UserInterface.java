@@ -8,6 +8,10 @@ import java.util.List;
 import java.util.Scanner;
 import java.util.concurrent.TimeUnit;
 
+/**
+ @author Lluis Carrasco Martinez
+ */
+
 public class UserInterface {
     // Set to public to be able to do the Test in AppTest
     public Controller controller;

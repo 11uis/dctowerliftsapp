@@ -2,7 +2,7 @@ package dctower.lifts.app;
 
 /**
  * Create the UserInterface
- *
+ @author Lluis Carrasco Martinez
  */
 public class App 
 {

@@ -12,6 +12,7 @@ public class Controller {
 
     /**
      * Private Constructor. -> Singleton-Pattern
+     @author Lluis Carrasco Martinez
      */
     Controller()
     {
