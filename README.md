@@ -25,6 +25,11 @@ where is the app: directoryWhereTheAppIs$mvn clean install
 ###### TESTS
 I tested the methods using the jUnit test in the AppTest.java class that the IDEA created when i first created the project.
 
+###### ACKNOWLEDGMENTS 
+I want to thank my College colleagues, for the fun I have with them while programming, and to my family and friends, for
+supporting me though they do not always understand what exactly I am doing.
+
+
 Thanks for passing by, and lots of fun in this software-engineering adventure.
 11uis ;)
 
