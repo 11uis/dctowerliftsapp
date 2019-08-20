@@ -108,7 +108,9 @@ public class UserInterface {
         // for the Employes on the Ground Floor
         if (this.requestUp.size() != 0) {
             for (int i = 0; i < this.controller.getInstance().getLifts().size(); i ++) {
-                if ( this.controller.getInstance().getLifts().get(i).getCurrentFloor() == 0) {
+                // This method will take always first an idle elevator in the ground Floor.
+                // Need to implement a method that takes the closest elevator
+                if ( this.controller.getInstance().getLifts().get(i).getCurrentFloor() == 0 && this.controller.getInstance().getLifts().get(i).getState() == LiftState.GROUNDFLOOR) {
                     // Add all the employess in the ground floor in the lift
                     for (int j = 0; j < this.requestUp.size(); j++){
                         employee = this.requestUp.get(j);

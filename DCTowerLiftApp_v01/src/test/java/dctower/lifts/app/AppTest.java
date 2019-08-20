@@ -59,6 +59,9 @@ public class AppTest
         assertEquals(50, ui.controller.getInstance().getFloors().size());
     }
 
+    /**
+     * Test the addRequest() method and the checkAvailableElevator() method
+     */
     @Test
     public void availableElevator() {
         System.out.println("\n\n################ Elevators before the addRequest() ##############");
@@ -77,6 +80,11 @@ public class AppTest
         // Update the Elevators
         ui.controller.getInstance().goingUpElevator();
 
+
+        ui.addRequest(ui.controller.getInstance().getEmployees().get(8));
+        ui.checkAvailableElevator();
+        ui.controller.getInstance().goingUpElevator();
+
         // Print the Elevators State after the goingUpElevator() method
         System.out.println("\n\n################ Elevators after going UP ##############");
         for ( int i = 0; i < ui.controller.getInstance().getLifts().size(); i ++) {
@@ -84,7 +92,20 @@ public class AppTest
                     "    Current floor: " + ui.controller.getInstance().getLifts().get(i).getCurrentFloor() +
                     "    State: " + ui.controller.getInstance().getLifts().get(i).getState());
         }
+
+        ui.addRequest(ui.controller.getInstance().getEmployees().get(0));
+        ui.checkAvailableElevator();
+        ui.controller.getInstance().goingDownElevator();
+        // Print the Elevators State after the goingDownElevator() method
+        System.out.println("\n\n################ Elevators after going DOWN ##############");
+        for ( int i = 0; i < ui.controller.getInstance().getLifts().size(); i ++) {
+            System.out.println("Lift: " + ui.controller.getInstance().getLifts().get(i).getId() +
+                    "    Current floor: " + ui.controller.getInstance().getLifts().get(i).getCurrentFloor() +
+                    "    State: " + ui.controller.getInstance().getLifts().get(i).getState());
+        }
+
     } // END of availableElevator()
+
 
     // TODO Test not successful, retake it
     @Test
