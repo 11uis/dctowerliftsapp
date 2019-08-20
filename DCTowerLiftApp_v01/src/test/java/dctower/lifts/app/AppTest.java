@@ -59,7 +59,7 @@ public class AppTest
         assertEquals(50, ui.controller.getInstance().getFloors().size());
     }
 
-    // TODO Test not successful, retake
+    // TODO Test not successful, retake it
     @Test
     public void hireEmployee() {
         ui.hireEmployee();

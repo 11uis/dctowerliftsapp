@@ -6,12 +6,17 @@ import java.io.InputStreamReader;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
+import java.util.concurrent.TimeUnit;
 
 public class UserInterface {
-    // Set to public to be able to do the Test
+    // Set to public to be able to do the Test in AppTest
     public Controller controller;
+    private List<Employee> requestUp;
+    private List<Employee> requestDown;
 
     public UserInterface() {
+        this.requestUp = new ArrayList<>();
+        this.requestDown = new ArrayList<>();
     }
 
     /**
@@ -41,6 +46,7 @@ public class UserInterface {
     public void start() {
         this.createEmployees();
         this.createLifts();
+        this.createFloors();
         for (int i = 0; i < controller.getInstance().getLifts().size(); i++) {
             System.out.println("Lift: " + controller.getInstance().getLifts().get(i).getId() +
                     "    Current floor: " + controller.getInstance().getLifts().get(i).getCurrentFloor() +
@@ -81,7 +87,66 @@ public class UserInterface {
         }
     } // END of createFloors()
 
-    // TODO Not working check why it is not reading the keyboard
+    /**
+     * Add Elevator Request, the requests will be queued in two Lists
+     */
+    public void addRequest(Employee employee) {
+        if (employee.getCurrentFloor() == 0) {
+            this.requestUp.add(employee);
+        } else {
+            this.requestDown.add(employee);
+        }
+    } // END of addRequest(...)
+
+    /**
+     * Check available Elevator
+     */
+    public Lift checkAvailableElevator() {
+        Integer temp;
+        Employee employee;
+        Lift availableLift = new Lift();
+        // for the Employes on the Ground Floor
+        if (this.requestUp.size() != 0) {
+            for (int i = 0; i < this.controller.getInstance().getLifts().size(); i ++) {
+                if ( this.controller.getInstance().getLifts().get(i).getCurrentFloor() == 0) {
+                    // Add all the employess in the ground floor in the lift
+                    for (int j = 0; j < this.requestUp.size(); j++){
+                        employee = this.requestUp.get(j);
+                        this.controller.getInstance().getLifts().get(i).addEmployee(employee);
+                    }
+                    // Set the new LiftState to UP
+                    this.controller.getInstance().getLifts().get(i).setState(LiftState.UP);
+                    availableLift = this.controller.getInstance().getLifts().get(i);
+                    break;
+                    // TODO: slice the employees that took the elevator from the requestUp
+                }
+            }
+        }  else if (this.requestDown.size() != 0){
+            // TODO write method to pick the nearest Elevator
+            for (int i = 0; i < this.controller.getInstance().getLifts().size(); i++) {
+                if (this.controller.getInstance().getLifts().get(i).getState() == LiftState.STOP || this.controller.getInstance().getLifts().get(i).getState() == LiftState.DOWN) {
+                    for (int j = 0; j < this.requestDown.size(); j++) {
+                        temp = this.controller.getInstance().getLifts().get(i).getCurrentFloor() - this.requestDown.get(j).getCurrentFloor();
+                        if (temp >= 0) {
+                            employee = this.requestDown.get(j);
+                            this.controller.getInstance().getLifts().get(i).addEmployee(employee);
+                            this.controller.getInstance().getLifts().get(i).setState(LiftState.DOWN);
+                            availableLift = this.controller.getInstance().getLifts().get(i);
+                            break;
+
+                            // TODO: slice the employees that took the elevator from the requestDown
+                        }
+                    }
+                }
+            }
+        }
+
+        return availableLift;
+    } // END of checkAvailableElevator()
+
+
+
+    // TODO: Not working, check why it is not reading the keyboard
     /**
      * Methode to hire a new Employee
      */

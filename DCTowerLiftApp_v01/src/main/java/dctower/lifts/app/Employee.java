@@ -3,8 +3,9 @@ package dctower.lifts.app;
 public class Employee {
 
     // Attributes
-    public Integer floor;
-    public String name;
+    private Integer floor;
+    private Integer currentFloor;
+    private String name;
 
     // Constructor
     /**
@@ -13,6 +14,7 @@ public class Employee {
     public Employee (String name, Integer floor) {
         this.floor = floor;
         this.name = name;
+        this.currentFloor = 0;
     }
 
     // Setter
@@ -20,10 +22,12 @@ public class Employee {
         this.floor = floor;
     }
     public void setName(String name) { this.name = name; }
+    public void setCurrentFloor (Integer currentFloor) { this.currentFloor = currentFloor;}
 
     // Getter
     public Integer getFloor() {
         return this.floor;
     }
     public String getName() { return this.name; }
+    public Integer getCurrentFloor() { return this.currentFloor; }
 }
