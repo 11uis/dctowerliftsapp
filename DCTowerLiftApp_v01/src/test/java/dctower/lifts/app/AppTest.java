@@ -102,6 +102,8 @@ public class AppTest
         ui.controller.getInstance().goingDownElevator();
         // Print the Elevators State
         ui.controller.getInstance().printElevatorsState();
+
+        assertEquals(LiftState.STOP , ui.controller.getInstance().getLifts().get(0).getState());
     } // END of availableElevator()
 
 
