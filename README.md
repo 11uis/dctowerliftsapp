@@ -20,7 +20,8 @@ Maven version 3.6.0
 
 NOTE:
 In case the dependencies eventually are not recongnized, do not change them manually, try from the CLI, in the directory
-where is the app: directoryWhereTheAppIs$mvn clean install
+where is the app: directoryWhereTheAppIs
+$mvn clean install
 
 ###### TESTS
 I tested the methods using the jUnit test in the AppTest.java class that the IDEA created when i first created the project.
